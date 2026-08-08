@@ -11,5 +11,10 @@ export default defineConfig({
       '@': path.resolve(process.cwd(), './src'),
     },
   },
+  server: {
+    // Allow direct URL navigation to /signup, /login etc (SPA fallback)
+    historyApiFallback: true,
+  },
 })
+
 

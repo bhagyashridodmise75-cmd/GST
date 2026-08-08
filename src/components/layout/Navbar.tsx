@@ -24,6 +24,7 @@ interface NavbarProps {
   onOpenSettings: () => void;
   onResetDemo: () => void;
   onGoToLanding: () => void;
+  onLogout: () => void;
   currentView: string;
 }
 
@@ -35,6 +36,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenSettings,
   onResetDemo,
   onGoToLanding,
+  onLogout,
   currentView,
 }) => {
   const [showNotifications, setShowNotifications] = useState(false);
@@ -191,6 +193,16 @@ export const Navbar: React.FC<NavbarProps> = ({
           >
             <RefreshCw className="h-3 w-3" />
             <span>Reset Demo</span>
+          </button>
+
+          {/* Logout Button */}
+          <button
+            onClick={onLogout}
+            className="flex items-center gap-1 text-[11px] text-slate-400 hover:text-rose-300 transition bg-slate-800/40 hover:bg-rose-500/10 px-2 py-1 rounded border border-slate-700/40 hover:border-rose-500/30"
+            title="Logout and switch account"
+          >
+            <LogOut className="h-3 w-3" />
+            <span className="hidden sm:inline">Logout</span>
           </button>
         </div>
       </div>

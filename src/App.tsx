@@ -22,9 +22,25 @@ import { GSTCalendar } from './components/calendar/GSTCalendar';
 import { GSTSahayak } from './components/assistant/GSTSahayak';
 import { BusinessProfileSettings } from './components/settings/BusinessProfileSettings';
 import { AuthModal } from './components/auth/AuthModal';
+import { SignupPage } from './components/auth/SignupPage';
+import { LoginPage } from './components/auth/LoginPage';
+
+// --- URL-based route detection ---
+function getRoute(): 'signup' | 'login' | 'app' {
+  const path = window.location.pathname;
+  if (path === '/signup') return 'signup';
+  if (path === '/login') return 'login';
+  return 'app';
+}
 
 export function App() {
-  // Navigation State: 'landing' vs main app views
+  const route = getRoute();
+
+  // Render standalone auth pages based on URL
+  if (route === 'signup') return <SignupPage />;
+  if (route === 'login') return <LoginPage />;
+
+  // --- Main Application ---
   const [currentView, setCurrentView] = useState<string>('dashboard');
   const [isAuthModalOpen, setIsAuthModalOpen] = useState<boolean>(false);
 
@@ -130,6 +146,11 @@ export function App() {
     setFilingPeriods(updated);
   };
 
+  const handleLogout = () => {
+    db.logoutUser();
+    window.location.href = '/login';
+  };
+
   // If on Landing View, render Public Landing Page
   if (currentView === 'landing') {
     return (
@@ -151,6 +172,7 @@ export function App() {
         onOpenSettings={() => setCurrentView('settings')}
         onResetDemo={handleResetDemoData}
         onGoToLanding={() => setCurrentView('landing')}
+        onLogout={handleLogout}
         currentView={currentView}
       />
 
