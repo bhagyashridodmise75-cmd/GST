@@ -80,15 +80,14 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onViewDe
             <span>Get Started Free</span>
             <ArrowRight className="h-4 w-4" />
           </button>
-
           <button
-          onClick={onViewDemo}
-          
+            onClick={onViewDemo}
             className="flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-sm font-bold border border-slate-700 transition"
-          >
+>
             <Receipt className="h-4 w-4 text-indigo-400" />
             <span>Sign in</span>
           </button>
+          
         </div>
 
         {/* Hero Feature Badges */}

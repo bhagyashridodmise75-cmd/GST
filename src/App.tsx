@@ -41,7 +41,7 @@ export function App() {
   if (route === 'login') return <LoginPage />;
 
   // --- Main Application ---
-  const [currentView, setCurrentView] = useState<string>('dashboard');
+  const [currentView, setCurrentView] = useState<string>('landing');
   const [isAuthModalOpen, setIsAuthModalOpen] = useState<boolean>(false);
 
   // App Data State
@@ -154,10 +154,22 @@ export function App() {
   // If on Landing View, render Public Landing Page
   if (currentView === 'landing') {
   return (
-    <LandingPage
-      onGetStarted={() => setIsAuthModalOpen(true)}
-      onViewDemo={() => setIsAuthModalOpen(true)}
-    />
+    <>
+      <LandingPage
+        onGetStarted={() => setIsAuthModalOpen(true)}
+        onViewDemo={() => setIsAuthModalOpen(true)}
+      />
+
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        onAuthenticate={(newProfile) => {
+          setProfile(newProfile);
+          db.updateProfile(newProfile);
+          setCurrentView('dashboard');
+        }}
+      />
+    </>
   );
 }
   return (
@@ -329,16 +341,7 @@ export function App() {
         onSave={handleSaveInvoice}
       />
 
-      {/* Auth Modal */}
-      <AuthModal
-        isOpen={isAuthModalOpen}
-        onClose={() => setIsAuthModalOpen(false)}
-        onAuthenticate={(newProfile) => {
-          setProfile(newProfile);
-          db.updateProfile(newProfile);
-          setCurrentView('dashboard');
-        }}
-      />
+      
     </div>
   );
 }
