@@ -41,7 +41,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onViewDe
               onClick={onViewDemo}
               className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800 transition"
             >
-              Explore Live Demo
+              Explore GSTease
             </button>
             <button
               onClick={onGetStarted}
@@ -85,7 +85,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onViewDe
             className="flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-sm font-bold border border-slate-700 transition"
           >
             <Receipt className="h-4 w-4 text-indigo-400" />
-            <span>Explore Dashboard</span>
+            <span>Log in</span>
           </button>
         </div>
 
