@@ -37,17 +37,18 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onViewDe
           </div>
 
           <div className="flex items-center gap-3">
-            <button
-              onClick={onViewDemo}
-              className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800 transition"
-            >
-              Explore GSTease
-            </button>
+            
             <button
               onClick={onGetStarted}
               className="px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-semibold shadow-lg shadow-indigo-500/25 transition hover:scale-105"
             >
               Get Started Free
+            </button>
+            <button
+              onClick={onViewDemo}
+              className="px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800 transition"
+            >
+              Explore GSTease
             </button>
           </div>
         </div>
