@@ -153,14 +153,13 @@ export function App() {
 
   // If on Landing View, render Public Landing Page
   if (currentView === 'landing') {
-    return (
-      <LandingPage
-        onGetStarted={() => setIsAuthModalOpen(true)}
-        onViewDemo={() => setIsAuthModalOpen(true)}
-      />
-    );
-  }
-
+  return (
+    <LandingPage
+      onGetStarted={() => setIsAuthModalOpen(true)}
+      onViewDemo={() => setIsAuthModalOpen(true)}
+    />
+  );
+}
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans">
       {/* Top Navbar */}
