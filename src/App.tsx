@@ -156,7 +156,7 @@ export function App() {
     return (
       <LandingPage
         onGetStarted={() => setIsAuthModalOpen(true)}
-        onViewDemo={() => setCurrentView('dashboard')}
+        onViewDemo={() => setIsAuthModalOpen(true)}
       />
     );
   }
