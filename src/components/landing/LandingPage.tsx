@@ -74,7 +74,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onViewDe
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
           <button
-            onClick={onGetStarted}
+            
             className="flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-sm font-bold shadow-xl shadow-indigo-500/30 transition hover:scale-105"
           >
             <span>Get Started Free</span>
@@ -84,7 +84,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onViewDe
             onClick={onViewDemo}
             className="flex items-center gap-2 px-8 py-3.5 rounded-2xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-sm font-bold border border-slate-700 transition"
 >
-            <Receipt className="h-4 w-4 text-indigo-400" />
+            
             <span>Sign in</span>
           </button>
           
