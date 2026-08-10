@@ -39,7 +39,7 @@ export const LandingPage: React.FC<LandingPageProps> = ({ onGetStarted, onViewDe
           <div className="flex items-center gap-3">
             
             <button
-              onClick={onGetStarted}
+              
               className="px-4 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-semibold shadow-lg shadow-indigo-500/25 transition hover:scale-105"
             >
               Get Started Free
